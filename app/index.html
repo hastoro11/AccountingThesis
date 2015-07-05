@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>My AngularJS App</title>
+    <title>Angular Accounting</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
@@ -13,7 +13,7 @@
 <nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="container">
         <div class="navbar-header">
-            <a class="navbar-brand" href="#/home">SörnyeiGábor</a>
+            <a class="navbar-brand" ui-sref="home">SörnyeiGábor</a>
         </div>
 
         <div class="collapse navbar-collapse">
@@ -24,7 +24,7 @@
                         Könyvelés <span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a href="#/szallito"> Szállítók </a> </li>
+                        <li><a ui-sref="szallito" href="#"> Szállítók </a> </li>
                         <li><a href="#"> Vevők </a> </li>
                         <li><a href="#"> Pénztár </a> </li>
                         <li><a href="#"> Bank </a> </li>
@@ -56,7 +56,7 @@
 <!-- Container -->
 <div class="container">
 
-    <div ng-view></div>
+    <div ui-view></div>
 
 </div><!-- End of container -->
 
@@ -69,9 +69,12 @@
 <script src="bower_components/angular/angular.js"></script>
 <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
 <script src="bower_components/angular-route/angular-route.js"></script>
+<script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
 <script src="bower_components/angular-i18n/angular-locale_hu-hu.js"></script>
 <script src="app.js"></script>
 <script src="home/home.js"></script>
 <script src="szallito/szallito.js"></script>
+<script src="szallito/SzallitoCtrl.js"></script>
+<script src="szallito/SzallitoSrvc.js"></script>
 </body>
 </html>

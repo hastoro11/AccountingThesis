@@ -1,4 +1,11 @@
 /* app css stylesheet */
 body{
-  margin-top: 50px;
+  margin-top: 70px;
+}
+fieldset{
+  margin-top: 20px;
+}
+
+.panel-heading{
+  font-size: x-large;
 }

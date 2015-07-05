@@ -4,9 +4,23 @@
 angular.module('myApp', [
     'ngRoute',
     'ui.bootstrap',
+    'ui.router',
     'myApp.home',
     'myApp.szallito'
 ]).
-    config(['$routeProvider', function ($routeProvider) {
-        $routeProvider.otherwise({redirectTo: '/home'});
+    config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {
+        $urlRouterProvider.otherwise('/');
+
+        $stateProvider
+            .state('home', {
+                url: '/',
+                templateUrl: 'home/home.html',
+                controller: 'HomeCtrl'
+            })
+
+            .state('szallito',{
+                url:'/szallito',
+                templateUrl:'szallito/szallito.html',
+                controller:'SzallitoCtrl'
+            })
     }]);

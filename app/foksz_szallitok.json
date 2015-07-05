@@ -1,0 +1,12 @@
+[
+  {
+    "id":1,
+    "fokszam":4541,
+    "megnevezes":"Belföldi szállítók"
+  },
+  {
+    "id":2,
+    "fokszam":4542,
+    "megnevezes":"Külföldi szállítók"
+  }
+]
