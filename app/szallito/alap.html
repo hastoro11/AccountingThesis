@@ -1,0 +1,170 @@
+<form name="alapForm">
+    <fieldset>
+        <legend>Alap adatok</legend>
+
+        <!-- Főkpnyvi szám -->
+        <div class="row">
+            <div class="col-sm-2">
+                <div class="form-group form-group-sm">
+                    <label class="control-label">Főkönyvi szám</label>
+
+                    <select class="form-control" name="fokszam"
+                            ng-model="tetel.fokszam"
+                            ng-options="fok.fokszam as fok.megnevezes for fok in fokszamok">
+                        <option value=""> -- Főkönyvi szám --</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Partnerek -->
+            <div class="col-sm-2">
+                <div class="form-group form-group-sm">
+                    <label class="control-label">Partner</label>
+
+                    <select class="form-control" name="szallito"
+                            ng-model="tetel.szallito"
+                            ng-options="sz.id as sz.nev for sz in szallitok">
+                        <option value=""> -- Partnerek --</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Fizetési mód -->
+            <div class="col-sm-2">
+                <div class="form-group form-group-sm">
+                    <label class="control-label">Fizetési mód</label>
+
+
+                    <select class="form-control" name="fizmod"
+                            ng-model="tetel.fizmod"
+                            ng-options="fm.id as fm.megnevezes for fm in fizmodok">
+                        <option value=""> -- Fizetési módok --</option>
+                    </select>
+                </div>
+            </div>
+
+
+            <!-- Bizonyatszám -->
+            <div class="col-sm-2">
+                <div class="form-group form-group-sm">
+                    <label class="control-label">Bizonylatszám</label>
+
+
+                    <input type="text" class="form-control"
+                           ng-model="tetel.bizszam"
+                           tabindex="3">
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- Teljesítés dátuma -->
+            <div class="col-sm-2">
+                <div class="form-group form-group-sm">
+                    <label class="control-label">Teljesítés</label>
+
+
+                    <div class="input-group input-group-sm">
+                        <input type="text" class="form-control"
+                               readonly
+                               datepicker-popup
+                               close-on-date-selection="true"
+                               ng-model="tetel.teljdatum"
+                               is-open="teljOpened">
+                                            <span class="input-group-btn">
+                                                <button type="button"
+                                                        class="btn btn-primary glyphicon glyphicon-calendar"
+                                                        ng-click="teljOpen($event)"/>
+                                            </span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Kiállítás dátuma -->
+            <div class="col-sm-2">
+                <div class="form-group form-group-sm">
+                    <label class="control-label">Kiállítás</label>
+
+                    <div class="input-group input-group-sm">
+                        <input type="text" class="form-control"
+                               readonly
+                               datepicker-popup
+                               ng-model="tetel.kialldatum"
+                               is-open="kiallOpened">
+                                            <span class="input-group-btn">
+                                                <button type="button"
+                                                        class="btn btn-primary glyphicon glyphicon-calendar"
+                                                        ng-click="kiallOpen($event)"/>
+                                            </span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Esedékesség dátuma -->
+            <div class="col-sm-2">
+                <div class="form-group form-group-sm">
+                    <label class="control-label">Esedékesség</label>
+
+                    <div class="input-group input-group-sm">
+                        <input type="text" class="form-control"
+                               readonly
+                               datepicker-popup
+                               ng-model="tetel.eseddatum"
+                               is-open="esedOpened">
+                                            <span class="input-group-btn">
+                                                <button type="button"
+                                                        class="btn btn-primary glyphicon glyphicon-calendar"
+                                                        ng-click="esedOpen($event)"/>
+                                            </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+
+            <!-- Megnevezés -->
+            <div class="col-sm-3">
+                <div class="form-group form-group-sm">
+                    <label class="control-label">Megnevezés</label>
+                    <input type="text" class="form-control" ng-model="tetel.megnevezes">
+                </div>
+            </div>
+
+            <!-- Összeg -->
+            <div class="col-sm-2">
+                <div class="form-group form-group-sm">
+                    <label class="control-label">Összeg</label>
+                    <input type="number" class="form-control" ng-model="tetel.osszeg">
+                </div>
+
+            </div>
+
+            <!-- TK Jelleg -->
+            <div class="col-sm-2">
+
+                <div class="row">
+                    <label class="control-label">Tartozik / Követel</label>
+                </div>
+
+                <div class="row">
+                    <label class="radio-inline">
+                        <input name="tkjelleg"
+                               id="T" value="T"
+                               type="radio"
+                               ng-model="tetel.tkjelleg"> T
+                    </label>
+                    <label class="radio-inline">
+                        <input name="tkjelleg"
+                               id="K" value="K"
+                               type="radio"
+                               ng-model="tetel.tkjelleg"
+                               ng-checked="true"> K
+                    </label>
+                </div>
+            </div>
+
+        </div>
+
+    </fieldset>
+</form>

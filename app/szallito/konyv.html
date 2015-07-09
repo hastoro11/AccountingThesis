@@ -1,0 +1,143 @@
+<form name="konyvForm">
+    <fieldset>
+        <legend>Könyvelési tételek</legend>
+        <div class="row">
+            <!-- Főkönyvi szám -->
+            <div class="col-sm-2">
+                <div class="form-group form-group-sm">
+                    <label class="control-label">Főkönyvi szám</label>
+
+                    <select class="form-control" name="fokszam"
+                            ng-model="sor.fokszam"
+                            ng-options="fok.fokszam as fok.megnevezes for fok in fokszamok">
+                        <option value=""> -- Főkönyvi szám --</option>
+                    </select>
+                </div>
+            </div>
+            <!-- Megnevezés -->
+            <div class="col-sm-3">
+                <div class="form-group form-group-sm">
+                    <label class="control-label">Megnevezés</label>
+
+                    <input type="text" class="form-control" ng-model="sor.megnevezes">
+                </div>
+            </div>
+
+            <!-- TK Jelleg -->
+            <div class="col-sm-2">
+                <div class="row">
+                    <label class="control-label">Tartozik / Követel</label>
+                </div>
+
+                <div class="radio-inline">
+                    <label><input name="tkjelleg" id="T" value="T" type="radio"
+                                  ng-model="sor.tkjelleg"> T </label>
+                </div>
+                <div class="radio-inline">
+                    <label><input name="tkjelleg" id="K" value="K" type="radio"
+                                  ng-model="sor.tkjelleg"
+                                  ng-checked="true"> K
+                    </label>
+                </div>
+            </div>
+
+            <!-- Összeg -->
+            <div class="col-sm-2">
+                <div class="form-group form-group-sm">
+                    <label class="control-label">Összeg</label>
+
+                    <input type="number" class="form-control" ng-model="sor.osszeg">
+                </div>
+
+            </div>
+            <div class="col-sm-2">
+                <div class="form-group form-group-sm">
+                    <label class="control-label">ÁFA</label>
+                    <select class="form-control">
+                        <option value=""> -- ÁFA --</option>
+                        <option value="1"> 27% ÁFA</option>
+                        <option value="2"> 18% ÁFA</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Jóváhagyás -->
+            <div class="col-sm-1">
+                <div class="form-group form-group-sm">
+                    <label class="control-label">Jóváhagyás</label>
+                    <button type="button"
+                            class="btn btn-success form-control"
+                            ng-click="addRow()">Mehet
+                    </button>
+                </div>
+            </div>
+        </div>
+    </fieldset>
+    <fieldset>
+        <legend>Kontírozás</legend>
+
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>Fők. szám</th>
+                <th>Megnevezés</th>
+                <th>Összeg</th>
+                <th>Fők. szám</th>
+                <th>Megnevezés</th>
+                <th>Összeg</th>
+            </tr>
+            </thead>
+            <tr ng-show="tetel.tkjelleg=='T'">
+                <td>{{tetel.fokszam}}</td>
+                <td>{{tetel.megnevezes}}</td>
+                <td>{{tetel.osszeg | number : 0}} Ft</td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr ng-show="tetel.tkjelleg=='K'">
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>{{tetel.fokszam}}</td>
+                <td>{{tetel.megnevezes}}</td>
+                <td>{{tetel.osszeg | number : 0}} Ft</td>
+            </tr>
+            <tbody ng-repeat="kontir in tetel.kontir">
+            <tr ng-show="kontir.tkjelleg=='T'">
+                <td>{{kontir.fokszam}}</td>
+                <td>{{kontir.megnevezes}}</td>
+                <td>{{kontir.osszeg | number : 0}} Ft</td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr ng-show="kontir.tkjelleg=='K'">
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>{{kontir.fokszam}}</td>
+                <td>{{kontir.megnevezes}}</td>
+                <td>{{kontir.osszeg | number : 0}} Ft</td>
+            </tr>
+            </tbody>
+
+        </table>
+        <hr/>
+        <div class="row" style="font-size: large">
+            <div class="col-sm-2 col-sm-offset-2">
+                Tartozik összesen
+            </div>
+            <div class="col-sm-2">
+                <span class="pull-right">0 Ft</span>
+            </div>
+            <div class="col-sm-2 col-sm-offset-2">
+                Követel összesen
+            </div>
+            <div class="col-sm-2">
+                <span class="pull-right">0 Ft</span>
+            </div>
+        </div>
+
+    </fieldset>
+</form>

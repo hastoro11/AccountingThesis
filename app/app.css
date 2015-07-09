@@ -9,3 +9,7 @@ fieldset{
 .panel-heading{
   font-size: x-large;
 }
+
+.input-group-btn .glyphicon{
+  margin-top: -1px;
+}

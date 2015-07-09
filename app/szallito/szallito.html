@@ -6,43 +6,32 @@
                 <span class="label label-info pull-right">Sorszám: 1</span>
             </div>
             <div class="panel-body">
-                <fieldset>
-                    <legend>
-                        <span>Szállító</span>
-                    </legend>
-
-                    <form name="szallitoForm">
-                        <div class="row">
-                            <div class="col-sm-4">
-                                <div class="form-group-sm">
-                                    <label>Főkönyvi szám</label>
-                                    <select class="form-control" name="fokszam"
-                                            ng-model="szamla.fokszam"
-                                            ng-options="fok.fokszam as fok.megnevezes for fok in fokszamok">
-                                        <option value=""> -- Főkönyvi szám --</option>
-                                    </select></div>
-                            </div>
-                            <div class="col-sm-4">
-                                <div class="form-group-sm">
-                                    <label>Partner</label>
-                                    <select class="form-control" name="szallito" ng-model="szamla.szallito"
-                                            ng-options="sz.id as sz.nev for sz in szallitok">
-                                        <option value=""> -- Partnerek --</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="col-sm-4">
-                                <div class="form-group-sm">
-                                    <label>Számlaszám</label>
-                                    <input type="text" class="form-control" ng-model="szamla.szamlaszam">
-                                </div>
-                            </div>
-                        </div>
-                    </form>
-                </fieldset>
+                <div ui-view></div>
             </div>
             <div class="panel-footer">
-                <button type="button" class="btn btn-primary" ng-click="submit()">Submit</button>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <a ui-sref="szallito.alap"
+                           class="btn btn-info pull-left"
+                           ng-show="$state.current.name=='szallito.konyv'">
+                            <i class="glyphicon glyphicon-chevron-left"> </i> Előző
+                        </a>
+                        <button type="button"
+                                class="btn btn-success pull-right"
+                                ng-click="kovetkezo()"
+                                ng-show="$state.current.name=='szallito.alap'">
+                            Következő <i class="glyphicon glyphicon-chevron-right"></i>
+                        </button>
+
+                        <div class="pull-right">
+                            <a class="btn btn-danger" ng-show="$state.current.name=='szallito.konyv'">
+                                Töröl
+                            </a>
+                            <a class="btn btn-warning" ng-show="$state.current.name=='szallito.konyv'">
+                                Mentés
+                            </a></div>
+                    </div>
+                </div>
             </div>
         </div>
 

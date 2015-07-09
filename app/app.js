@@ -6,7 +6,8 @@ angular.module('myApp', [
     'ui.bootstrap',
     'ui.router',
     'myApp.home',
-    'myApp.szallito'
+    'myApp.szallito',
+    'myApp.common'
 ]).
     config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {
         $urlRouterProvider.otherwise('/');
@@ -19,6 +20,7 @@ angular.module('myApp', [
             })
 
             .state('szallito',{
+                abstract:true,
                 url:'/szallito',
                 templateUrl:'szallito/szallito.html',
                 controller:'SzallitoCtrl'
