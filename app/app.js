@@ -19,10 +19,4 @@ angular.module('myApp', [
                 controller: 'HomeCtrl'
             })
 
-            .state('szallito',{
-                abstract:true,
-                url:'/szallito',
-                templateUrl:'szallito/szallito.html',
-                controller:'SzallitoCtrl'
-            })
     }]);

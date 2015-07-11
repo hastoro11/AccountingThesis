@@ -1,0 +1,30 @@
+[
+  {
+    "fokszam": 1,
+    "megnevezes": "Tárgyi eszközök"
+  },
+  {
+    "fokszam": 2,
+    "megnevezes": "Készletek"
+  },
+  {
+    "fokszam": 3,
+    "megnevezes": "Követelések"
+  },
+  {
+    "fokszam": 4,
+    "megnevezes": "Kötelezettségek"
+  },
+  {
+    "fokszam": 5,
+    "megnevezes": "Kiadások"
+  },
+  {
+    "fokszam": 6,
+    "megnevezes": "Ráfordítások"
+  },
+  {
+    "fokszam": 7,
+    "megnevezes": "Bevételek"
+  }
+]
