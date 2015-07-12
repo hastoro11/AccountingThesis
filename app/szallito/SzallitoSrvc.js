@@ -5,11 +5,11 @@ angular.module('myApp.szallito')
 
     .factory('SzallitoSrvc', function ($http) {
         var factory = {};
-        factory.getSzallitok = function () {
+        factory.getPartnerek = function () {
             return $http.get('szallitok.json');
         }
 
-        factory.getFokSzamok = function () {
+        factory.getSzallitok = function () {
             return $http.get('foksz_szallitok.json');
         }
 

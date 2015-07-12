@@ -11,19 +11,20 @@
             <!-- Panel Body Form -->
             <div class="panel-body">
 
-                <form name="form.alapForm" novalidate class="">
+                <form name="szallitoForm" novalidate>
 
-                    <!-- Főkpnyvi szám -->
+                    <!-- Főkönyvi szám -->
                     <div class="row">
                         <div class="col-sm-2">
                             <div class="form-group form-group-sm"
-                                 ng-class="{'has-error':form.alapForm.fokszam.$invalid && form.alapForm.fokszam.$touched}">
+                                 ng-class="{'has-error':szallitoForm.fokszam.$invalid && szallitoForm.fokszam.$touched}">
                                 <label class="control-label">Főkönyvi szám</label>
 
-                                <select class="form-control" name="fokszam" autofocus
+                                <select class="form-control" name="fokszam"
+                                        autofocus
                                         ng-required="true"
                                         ng-model="tetel.fokszam"
-                                        ng-options="fok.fokszam as fok.megnevezes for fok in fokszamok">
+                                        ng-options="szall.fokszam as szall.megnevezes for szall in szallitok">
                                     <option value=""> -- Főkönyvi szám --</option>
                                 </select>
                             </div>
@@ -32,13 +33,13 @@
                         <!-- Partnerek -->
                         <div class="col-sm-2">
                             <div class="form-group form-group-sm"
-                                 ng-class="{'has-error':form.alapForm.partner.$invalid && form.alapForm.partner.$touched}">
+                                 ng-class="{'has-error':szallitoForm.partner.$invalid && szallitoForm.partner.$touched}">
                                 <label class="control-label">Partner</label>
 
                                 <select class="form-control" name="partner"
                                         ng-required="true"
                                         ng-model="tetel.partner"
-                                        ng-options="sz.id as sz.nev for sz in szallitok">
+                                        ng-options="partner.id as partner.nev for partner in partnerek">
                                     <option value=""> -- Partnerek --</option>
                                 </select>
                             </div>
@@ -47,7 +48,7 @@
                         <!-- Fizetési mód -->
                         <div class="col-sm-2">
                             <div class="form-group form-group-sm"
-                                 ng-class="{'has-error':form.alapForm.fizmod.$invalid && form.alapForm.fizmod.$touched}">
+                                 ng-class="{'has-error':szallitoForm.fizmod.$invalid && szallitoForm.fizmod.$touched}">
                                 <label class="control-label">Fizetési mód</label>
 
 
@@ -64,7 +65,7 @@
                         <!-- Bizonyatszám -->
                         <div class="col-sm-2">
                             <div class="form-group form-group-sm"
-                                 ng-class="{'has-error':form.alapForm.bizszam.$invalid && form.alapForm.bizszam.$touched}">
+                                 ng-class="{'has-error':szallitoForm.bizszam.$invalid && szallitoForm.bizszam.$touched}">
                                 <label class="control-label">Bizonylatszám</label>
 
 
@@ -73,14 +74,36 @@
                                        ng-model="tetel.bizszam">
                             </div>
                         </div>
+
+                        <!-- Hibaüzenetek -->
+                        <div class="col-sm-4">
+                            <div ng-if="szallitoForm.fokszam.$error.required && szallitoForm.fokszam.$touched
+                            || szallitoForm.partner.$error.required && szallitoForm.partner.$touched
+                            || szallitoForm.fizmod.$error.required && szallitoForm.fizmod.$touched
+                            || szallitoForm.bizszam.$error.required && szallitoForm.bizszam.$touched
+                            || szallitoForm.teljdatum.$error.required && szallitoForm.teljdatum.$touched
+                            || szallitoForm.kialldatum.$error.required && szallitoForm.kialldatum.$touched
+                            || szallitoForm.eseddatum.$error.required && szallitoForm.eseddatum.$touched
+                            || szallitoForm.megnevezes.$error.required && szallitoForm.megnevezes.$touched
+                            || szallitoForm.osszeg.$invalid && szallitoForm.osszeg.$touched
+                            ">
+                                <div class="text-danger"><strong>Hiba</strong></div>
+                                <div class="help-block"><span
+                                        class="text-danger">Kérem, ellenőrizze a megjelölt mezőket</span>
+                                </div>
+                            </div>
+
+
+                        </div>
                     </div>
+
 
                     <div class="row">
 
                         <!-- Teljesítés dátuma -->
                         <div class="col-sm-2">
                             <div class="form-group form-group-sm"
-                                 ng-class="{'has-error':form.alapForm.teljdatum.$invalid && form.alapForm.teljdatum.$touched}">
+                                 ng-class="{'has-error':szallitoForm.teljdatum.$invalid && szallitoForm.teljdatum.$touched}">
                                 <label class="control-label">Teljesítés</label>
 
 
@@ -105,7 +128,7 @@
                         <!-- Kiállítás dátuma -->
                         <div class="col-sm-2">
                             <div class="form-group form-group-sm"
-                                 ng-class="{'has-error':form.alapForm.kialldatum.$invalid && form.alapForm.kialldatum.$touched}">
+                                 ng-class="{'has-error':szallitoForm.kialldatum.$invalid && szallitoForm.kialldatum.$touched}">
                                 <label class="control-label">Kiállítás</label>
 
 
@@ -129,7 +152,7 @@
                         <!-- Esedékesség dátuma -->
                         <div class="col-sm-2">
                             <div class="form-group form-group-sm"
-                                 ng-class="{'has-error':form.alapForm.eseddatum.$invalid && form.alapForm.eseddatum.$touched}">
+                                 ng-class="{'has-error':szallitoForm.eseddatum.$invalid && szallitoForm.eseddatum.$touched}">
                                 <label class="control-label">Esedékesség</label>
 
 
@@ -157,7 +180,7 @@
                         <!-- Megnevezés -->
                         <div class="col-sm-3">
                             <div class="form-group form-group-sm"
-                                 ng-class="{'has-error':form.alapForm.megnevezes.$invalid && form.alapForm.megnevezes.$touched}">
+                                 ng-class="{'has-error':szallitoForm.megnevezes.$invalid && szallitoForm.megnevezes.$touched}">
                                 <label class="control-label">Megnevezés</label>
                                 <input type="text" class="form-control"
                                        ng-required="true"
@@ -169,10 +192,13 @@
                         <!-- Összeg -->
                         <div class="col-sm-2">
                             <div class="form-group form-group-sm"
-                                 ng-class="{'has-error':form.alapForm.osszeg.$invalid && form.alapForm.alaposszeg.$touched}">
+                                 ng-class="{'has-error':szallitoForm.osszeg.$invalid && szallitoForm.osszeg.$touched}">
                                 <label class="control-label">Összeg</label>
                                 <input type="number" class="form-control"
+                                       min="0"
+                                       pattern="/^\d*$/"
                                        ng-required="true"
+                                       ng-pattern="/^\d+$/"
                                        name="osszeg"
                                        ng-model="tetel.osszeg">
                             </div>
@@ -214,7 +240,7 @@
                             <div class="form-group form-group-sm">
                                 <label class="control-label">Főkönyvi szám</label>
 
-                                <select class="form-control" name="fokszam" autofocus
+                                <select class="form-control" name="ellenfokszam" autofocus
                                         ng-model="sor.fokszam"
                                         ng-options="fok.fokszam as fok.megnevezes for fok in szamlatukor">
                                     <option value=""> -- Főkönyvi szám --</option>
@@ -299,13 +325,22 @@
                                 <th></th>
                             </tr>
                             <!-- Kontir sorok -->
-                            <tr>
+                            <tr ng-show="tetel.tkjelleg=='T'">
+                                <td>{{tetel.fokszam}}</td>
+                                <td>{{tetel.megnevezes}}</td>
+                                <td>{{tetel.osszeg | number : 0}} Ft</td>
                                 <td></td>
                                 <td></td>
                                 <td></td>
-                                <td>4541</td>
-                                <td>Vásárlás</td>
-                                <td>15000 Ft</td>
+                                <td></td>
+                            </tr>
+                            <tr ng-show="tetel.tkjelleg=='K'">
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>{{tetel.fokszam}}</td>
+                                <td>{{tetel.megnevezes}}</td>
+                                <td>{{tetel.osszeg | number : 0}} Ft</td>
                                 <td></td>
                             </tr>
                             <tr>
