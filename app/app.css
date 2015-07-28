@@ -30,10 +30,12 @@ table {
     padding-bottom: 2px;
 }
 
-.table.table-condensed tr:first-child{
+.table.table-condensed tr:first-child {
     border-bottom: 2px solid #ddd;
     border-top: 2px solid #ddd;
 }
 .table.table-condensed tr:last-child{
     border-bottom: 2px solid #ddd;
 }
+
+

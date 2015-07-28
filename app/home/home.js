@@ -1,4 +1,4 @@
-angular.module('myApp.home', ['ngRoute'])
+angular.module('myApp.home', [])
 
     .controller('HomeCtrl', function ($scope) {
 

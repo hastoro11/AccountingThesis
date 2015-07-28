@@ -7,6 +7,7 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="bower_components/toastr/toastr.css">
     <link rel="stylesheet" href="app.css">
 </head>
 <body>
@@ -24,11 +25,16 @@
                         Könyvelés <span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a ui-sref="szallito" href="#"> Szállítók </a> </li>
-                        <li><a href="#"> Vevők </a> </li>
-                        <li><a href="#"> Pénztár </a> </li>
-                        <li><a href="#"> Bank </a> </li>
-                        <li><a href="#"> Vegyes </a> </li>
+                        <li><a ui-sref="szallito" href="#"> Szállítók </a></li>
+                        <li><a ui-sref="vevo" href="#"> Vevők </a></li>
+                        <li class="divider"></li>
+                        <li><a href="#"> Bank </a></li>
+                        <li><a href="#"> Vegyes </a></li>
+                        <li class="divider"></li>
+                        <li class="dropdown-header"> Pénztár</li>
+                        <li><a href="#"> Pénztár - Bevétel </a></li>
+                        <li><a href="#"> Pénztár - Kiadás </a></li>
+
                     </ul>
                 </li>
                 <!-- Listák menü -->
@@ -37,8 +43,13 @@
                         Listák <span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a href="#"> Főkönyvi kivonat </a> </li>
-                        <li><a href="#"> Napló </a> </li>
+                        <li><a href="#"> Főkönyvi kivonat </a></li>
+                        <li><a href="#"> Főkönyvi kartonok </a></li>
+                        <li class="divider"></li>
+                        <li><a href="#"> Napló </a></li>
+                        <li class="divider"></li>
+                        <li><a href="#"> Vevő-szállító analitika </a></li>
+                        <li><a href="#"> ÁFA analitika </a></li>
                     </ul>
                 </li>
                 <!-- Beállítások menü -->
@@ -47,10 +58,18 @@
                         Beállítások <span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a href="#"> Cégadatok </a> </li>
-                        <li><a href="#"> Partnerek </a> </li>
+                        <li><a ui-sref="cegadatok" href="#"> Cégadatok </a></li>
+                        <li><a href="#"> Partnerek </a></li>
+                        <li class="divider"></li>
+                        <li><a href="#"> Számlatükör </a></li>
+                        <li><a href="#"> Naplók </a></li>
+                        <li class="divider"></li>
+                        <li><a href="#"> ÁFA kulcsok </a></li>
+                        <li><a href="#"> Fizetési módok </a></li>
                     </ul>
                 </li>
+                <!-- Dokumentáció -->
+                <li><a ui-sref="dokumentacio" href="#"> Dokumentáció </a></li>
             </ul>
         </div>
     </div>
@@ -60,25 +79,38 @@
 
     <div ui-view></div>
 
-</div><!-- End of container -->
+</div>
+<!-- End of container -->
 
 
 <!-- In production use:
 <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
 -->
-<script src="bower_components/jquery/dist/jquery.min.js"></script>
-<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="bower_components/jquery/dist/jquery.js"></script>
+<script src="bower_components/underscore/underscore.js"></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
 <script src="bower_components/angular/angular.js"></script>
 <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
 <script src="bower_components/angular-route/angular-route.js"></script>
-<script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
-<script src="bower_components/angular-messages/angular-messages.min.js"></script>
+<script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+<script src="bower_components/angular-ui-mask/dist/mask.js"></script>
 <script src="bower_components/angular-i18n/angular-locale_hu-hu.js"></script>
+<script src="bower_components/toastr/toastr.js"></script>
+<!-- My libraries and script files -->
 <script src="app.js"></script>
 <script src="common/common.services.js"></script>
 <script src="home/home.js"></script>
+<!-- Szállító -->
 <script src="szallito/szallito.js"></script>
-<script src="szallito/SzallitoCtrl.js"></script>
-<script src="szallito/SzallitoSrvc.js"></script>
+<script src="szallito/szallito.ctrl.js"></script>
+<script src="szallito/szallito.srvc.js"></script>
+<!-- Vevő -->
+<script src="vevo/vevo.js"></script>
+<script src="vevo/vevo.ctrl.js"></script>
+<script src="vevo/vevo.srvc.js"></script>
+<!-- Cégadatok -->
+<script src="cegadatok/cegadatok.js"></script>
+<script src="cegadatok/cegadatok.ctrl.js"></script>
+<script src="cegadatok/cegadatok.srvc.js"></script>
 </body>
 </html>

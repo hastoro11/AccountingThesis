@@ -5,14 +5,15 @@ angular.module('myApp.common', [])
 
     .factory('CommonSrvc', function ($http) {
         var factory = {};
+        var url = 'http://localhost:3000/';
         //---------------
 
         factory.getFizModok = function () {
-            return $http.get('fizmodok.json');
+            return $http.get(url + 'fizmodok');
         }
 
         factory.getSzamlatukor = function () {
-            return $http.get('szamlatukor.json');
+            return $http.get(url + 'szamlatukor');
         }
 
         //---------------

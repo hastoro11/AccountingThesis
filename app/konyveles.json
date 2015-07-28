@@ -1,0 +1,227 @@
+{
+  "cegadatok": [
+    {
+      "id": 1,
+      "cegnev": "Cég Kft",
+      "cim": "9400 Sopron, Apor V. u. 8.",
+      "adoszam": 12345678208,
+      "cegjegyzekszam": "080901234",
+      "bankszamlaszam": 1.1111111111111113e+23,
+      "kshszam": 12345678681011308
+    }
+  ],
+  "szallitok": [
+    {
+      "id": 1,
+      "nev": "Szállitó 1"
+    },
+    {
+      "id": 2,
+      "nev": "Szállitó 2"
+    },
+    {
+      "id": 3,
+      "nev": "Szállitó 3"
+    },
+    {
+      "id": 4,
+      "nev": "Szállitó 4"
+    }
+  ],
+  "vevok": [
+    {
+      "id": 1,
+      "nev": "Vevő 1"
+    },
+    {
+      "id": 2,
+      "nev": "Vevő 2"
+    },
+    {
+      "id": 3,
+      "nev": "Vevő 3"
+    },
+    {
+      "id": 4,
+      "nev": "Vevő 4"
+    }
+  ],
+  "szamlatukor": [
+    {
+      "fokszam": 1,
+      "megnevezes": "Tárgyi eszközök",
+      "osszesito": "I"
+    },
+    {
+      "fokszam": 2,
+      "megnevezes": "Készletek",
+      "osszesito": "I"
+    },
+    {
+      "fokszam": 3,
+      "megnevezes": "Követelések",
+      "osszesito": "I"
+    },
+    {
+      "fokszam": 31,
+      "megnevezes": "Vevők",
+      "osszesito": "I"
+    },
+    {
+      "fokszam": 311,
+      "megnevezes": "Belföldi vevők",
+      "osszesito": "N"
+    },
+    {
+      "fokszam": 312,
+      "megnevezes": "Külföldi vevők",
+      "osszesito": "N"
+    },
+    {
+      "fokszam": 4,
+      "megnevezes": "Kötelezettségek",
+      "osszesito": "I"
+    },
+    {
+      "fokszam": 454,
+      "megnevezes": "Szálíítók",
+      "osszesito": "I"
+    },
+    {
+      "fokszam": 4541,
+      "megnevezes": "Belföldi szállítók",
+      "osszesito": "N"
+    },
+    {
+      "fokszam": 4542,
+      "megnevezes": "Külföldi szállítók",
+      "osszesito": "N"
+    },
+    {
+      "fokszam": 466,
+      "megnevezes": "Levonandó ÁFA",
+      "osszesito": "I"
+    },
+    {
+      "fokszam": 4661,
+      "megnevezes": "Levonandó ÁFA",
+      "osszesito": "N"
+    },
+    {
+      "fokszam": 467,
+      "megnevezes": "Fizetendő ÁFA",
+      "osszesito": "I"
+    },
+    {
+      "fokszam": 4671,
+      "megnevezes": "Fizetendő ÁFA",
+      "osszesito": "N"
+    },
+    {
+      "fokszam": 5,
+      "megnevezes": "Kiadások",
+      "osszesito": "I"
+    },
+    {
+      "fokszam": 51,
+      "megnevezes": "Anyagköltség",
+      "osszesito": "N"
+    },
+    {
+      "fokszam": 52,
+      "megnevezes": "Anyagjellegű szolgáltatások",
+      "osszesito": "N"
+    },
+    {
+      "fokszam": 53,
+      "megnevezes": "Egyéb szolgáltatások",
+      "osszesito": "N"
+    },
+    {
+      "fokszam": 8,
+      "megnevezes": "Ráfordítások",
+      "osszesito": "I"
+    },
+    {
+      "fokszam": 9,
+      "megnevezes": "Bevételek",
+      "osszesito": "I"
+    },
+    {
+      "fokszam": 91,
+      "megnevezes": "Értékesítés bevételei",
+      "osszesito": "N"
+    },
+    {
+      "fokszam": 92,
+      "megnevezes": "Szolgáltatások bevételei",
+      "osszesito": "N"
+    }
+  ],
+  "naplo": [
+    {
+      "id": 1,
+      "megnevezes": "Szállító",
+      "jel": "S",
+      "fokszam": "454"
+    },
+    {
+      "id": 2,
+      "megnevezes": "Vevő",
+      "jel": "V",
+      "fokszam": "31"
+    },
+    {
+      "id": 3,
+      "megnevezes": "Pénztár",
+      "jel": "P",
+      "fokszam": "381"
+    }
+  ],
+  "fizmodok": [
+    {
+      "id": 1,
+      "megnevezes": "átutalás",
+      "fizhatarido": 8
+    },
+    {
+      "id": 2,
+      "megnevezes": "utánvét",
+      "fizhatarido": 0
+    }
+  ],
+  "lev-afa": [
+    {
+      "id": 1,
+      "kulcs": 0,
+      "fokszam": "4661"
+    },
+    {
+      "id": 2,
+      "kulcs": 18,
+      "fokszam": "4661"
+    },
+    {
+      "id": 3,
+      "kulcs": 27,
+      "fokszam": "4661"
+    }
+  ],
+  "fiz-afa": [
+    {
+      "id": 1,
+      "kulcs": 0,
+      "fokszam": "4671"
+    },
+    {
+      "id": 2,
+      "kulcs": 18,
+      "fokszam": "4671"
+    },
+    {
+      "id": 3,
+      "kulcs": 27,
+      "fokszam": "4671"
+    }
+  ]
+}

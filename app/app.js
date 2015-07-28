@@ -2,13 +2,14 @@
 
 // Declare app level module which depends on views, and components
 angular.module('myApp', [
-    'ngRoute',
-    'ngMessages',
     'ui.bootstrap',
     'ui.router',
+    'ui.mask',
     'myApp.home',
     'myApp.szallito',
-    'myApp.common'
+    'myApp.vevo',
+    'myApp.common',
+    'myApp.cegadatok'
 ]).
     config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {
         $urlRouterProvider.otherwise('/');
@@ -18,6 +19,13 @@ angular.module('myApp', [
                 url: '/',
                 templateUrl: 'home/home.html',
                 controller: 'HomeCtrl'
+            })
+            .state('dokumentacio', {
+                url: '/dokumentacio',
+                templateUrl: 'dokumentacio/dokumentacio.html',
+                controller: function () {
+                    
+                }
             })
 
     }]);

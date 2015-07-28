@@ -1,11 +1,14 @@
-angular.module('myApp.szallito', [])
+/**
+ * Created by gaborsornyei on 24/07/15.
+ */
+angular.module('myApp.vevo', [])
 
     .config(function ($stateProvider) {
         $stateProvider
-            .state('szallito', {
-                url: '/szallito',
-                templateUrl: 'szallito/szallito.html',
-                controller: 'SzallitoCtrl',
+            .state('vevo', {
+                url: '/vevo',
+                templateUrl: 'vevo/vevo.html',
+                controller: 'VevoCtrl',
                 resolve: {
                     naplo: function ($http) {
                         return $http.get('http://localhost:3000/naplo');

@@ -1,5 +1,5 @@
 Szállító Fixing
 ==================
-- date validation (all 3)
-- osszeg validation (>0)
-- validation messages
+- ÁFA
+*** - Esedékesség dátuma - függ a fizetési módtól => ráér később
+- chain loading => select options
