@@ -10,6 +10,7 @@ angular.module('myApp', [
     'myApp.vevo',
     'myApp.kivonat',
     'myApp.karton',
+    'myApp.naplo',
     'myApp.common',
     'myApp.cegadatok'
 ]).

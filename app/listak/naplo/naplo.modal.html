@@ -1,11 +1,11 @@
 <div class="modal-header">
     <h3 class="modal-title">
-        Főkönyvi karton
+        Napló
     </h3>
 </div>
 
 <div class="modal-body">
-    <form name="kartonForm">
+    <form name="naploForm">
         <div class="row">
             <div class="col-sm-6">
                 <div class="form-group form-group-sm">
@@ -14,17 +14,18 @@
                     <div class="input-group input-group-sm">
                         <input type="text" class="form-control"
                                name="datumtol"
-                               ng-required="true"
                                datepicker-popup
-                               is-open="tolopened"
-                               ng-model="karton.datumtol"
+                               is-open="tolopen"
+                               ng-model="naplo.datumtol"
+                               ng-required="true"
                                 >
-                        <span class="input-group-btn">
+
+                        <div class="input-group-btn">
                             <button class="btn btn-info" type="button"
-                                    ng-click="open($event, 'tolopened')">
+                                    ng-click="open($event,'tolopen')">
                                 <i class="glyphicon glyphicon-calendar"></i>
                             </button>
-                        </span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -34,42 +35,43 @@
 
                     <div class="input-group input-group-sm">
                         <input type="text" class="form-control"
-                               name="datumig"
-                               ng-required="true"
+                               name="datumtol"
                                datepicker-popup
-                               is-open="igopened"
-                               ng-model="karton.datumig"
+                               is-open="igopen"
+                               ng-model="naplo.datumig"
+                               ng-required="true"
                                 >
-                        <span class="input-group-btn">
+
+                        <div class="input-group-btn">
                             <button class="btn btn-info" type="button"
-                                    ng-click="open($event, 'igopened')">
+                                    ng-click="open($event,'igopen')">
                                 <i class="glyphicon glyphicon-calendar"></i>
                             </button>
-                        </span>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="col-sm-6">
                 <div class="form-group form-group-sm">
-                    <label class="control-label">Főkönyvi szám</label>
+                    <label class="control-label">Napló</label>
                     <select class="form-control"
-                            name="fokszam"
+                            name="naplo"
                             ng-required="true"
-                            ng-model="karton.fokszam"
-                            ng-options="fokszam.fokszam as fokszam.fokszam + ' - '+ fokszam.megnevezes for fokszam in szamlak"
-                            >
-                        <option value=""> -- Főkönyvi szám --</option>
+                            ng-model="naplo.tipus"
+                            ng-options="naplo.jel + ' - ' + naplo.megnevezes for naplo in naplok">
+                        <option value=""> -- Napló --</option>
                     </select>
                 </div>
             </div>
         </div>
     </form>
+
 </div>
 
 <div class="modal-footer">
     <button type="button" class="btn btn-warning" ng-click="cancel()">Mégsem</button>
     <button type="button" class="btn btn-primary"
             ng-click="ok()"
-            ng-disabled="kartonForm.$invalid">Rendben
+            ng-disabled="naploForm.$invalid">Rendben
     </button>
 </div>
