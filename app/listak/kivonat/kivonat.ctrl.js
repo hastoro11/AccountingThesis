@@ -6,7 +6,7 @@ angular.module('myApp.kivonat')
     .controller('KivonatCtrl', function ($modal, $scope, $state, $window) {
         var init = function () {
             var modalInstance = $modal.open({
-                animation: true,
+                animation: false,
                 templateUrl: 'listak/kivonat/kivonat.modal.html',
                 controller: 'ModalCtrl',
                 resolve: {
@@ -20,8 +20,7 @@ angular.module('myApp.kivonat')
                 .then(function (data) {
                     $scope.data = data;
                 }, function () {
-                    //$state.go('home');
-                    $window.history.back();
+                    $state.go('home');
                 });
         }
 

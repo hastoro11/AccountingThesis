@@ -7,7 +7,7 @@ angular.module('myApp')
         var url = 'http://localhost:3000/';
 
         factory.getPartnerek = function () {
-            return $http.get(url + 'vevok');
+            return $http.get(url + 'partnerek');
         }
 
         factory.getAfak = function () {

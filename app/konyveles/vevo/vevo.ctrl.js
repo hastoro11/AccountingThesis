@@ -75,7 +75,7 @@
             $scope.reset = function () {
                 $scope.tetel = {
                     tkjelleg: 'T',
-                    osszeg:0,
+                    osszeg: 0,
                     kontir: [],
                     tartosszesen: 0,
                     kovosszesen: 0,
@@ -105,7 +105,9 @@
 
             VevoSrvc.getPartnerek()
                 .success(function (data) {
-                    $scope.partnerek = data;
+                    $scope.partnerek = _.filter(data, function (partner) {
+                        return partner.vevo === true;
+                    })
                 })
 
             VevoSrvc.getAfak()

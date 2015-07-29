@@ -6,7 +6,7 @@ angular.module('myApp.naplo')
     .controller('NaploCtrl', function ($scope, $modal, $window) {
         var init = function () {
             var modalInstance = $modal.open({
-                animation: true,
+                animation: false,
                 templateUrl: 'listak/naplo/naplo.modal.html',
                 controller: 'NaploModalCtrl',
                 resolve: {

@@ -2,6 +2,7 @@
 
 // Declare app level module which depends on views, and components
 angular.module('myApp', [
+    'ngAnimate',
     'ui.bootstrap',
     'ui.router',
     'ui.mask',
@@ -12,7 +13,8 @@ angular.module('myApp', [
     'myApp.karton',
     'myApp.naplo',
     'myApp.common',
-    'myApp.cegadatok'
+    'myApp.cegadatok',
+    'myApp.partnerek'
 ]).
     config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {
         $urlRouterProvider.otherwise('/');

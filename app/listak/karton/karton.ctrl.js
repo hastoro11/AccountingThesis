@@ -3,10 +3,10 @@
  */
 angular.module('myApp.karton')
 
-    .controller('KartonCtrl', function ($scope, $modal, $window) {
+    .controller('KartonCtrl', function ($scope, $modal, $window, $state) {
         var init=function() {
             var modalInstance = $modal.open({
-                    animation: true,
+                    animation: false,
                     templateUrl: 'listak/karton/karton.modal.html',
                     controller: 'KartonModalCtrl',
                     resolve: {
@@ -22,7 +22,7 @@ angular.module('myApp.karton')
                     $scope.karton = data;
                 },
                 function () {
-                    $window.history.back();
+                    $state.go('home');
                 }
             )
         }
@@ -41,7 +41,7 @@ angular.module('myApp.karton')
         }
 
         $scope.cancel = function () {
-            $modalInstance.dismiss();
+            $modalInstance.dismiss('cancel');
         }
 
         $scope.open = function ($event, opened) {

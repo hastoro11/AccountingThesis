@@ -7,7 +7,7 @@ angular.module('myApp.szallito')
         var factory = {};
         var url = "http://localhost:3000/";
         factory.getPartnerek = function () {
-            return $http.get(url + 'szallitok');
+            return $http.get(url + 'partnerek');
         }
 
         factory.getAfak = function () {

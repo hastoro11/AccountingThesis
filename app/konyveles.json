@@ -2,48 +2,78 @@
   "cegadatok": [
     {
       "id": 1,
-      "cegnev": "Cég Kft",
+      "cegnev": "Vállalkozás Kft",
       "cim": "9400 Sopron, Apor V. u. 8.",
-      "adoszam": 12345678208,
-      "cegjegyzekszam": "080901234",
-      "bankszamlaszam": 1.1111111111111113e+23,
-      "kshszam": 12345678681011308
+      "adoszam": "12345678-2-08",
+      "cegjegyzekszam": "08-09-01234",
+      "bankszamlaszam": "11111111-11111111-22222222",
+      "kshszam": "12345678-6810-113-08"
     }
   ],
-  "szallitok": [
+  "partnerek": [
     {
       "id": 1,
-      "nev": "Szállitó 1"
+      "nev": "Szállitó 1",
+      "adoszam": "12345678-2-08",
+      "cim": "9400, Sopron, Baross u. 4",
+      "szallito": true,
+      "vevo": false
     },
     {
       "id": 2,
-      "nev": "Szállitó 2"
+      "nev": "Szállitó 2",
+      "adoszam": "12345678-2-08",
+      "cim": "9400, Sopron, Baross u. 4",
+      "szallito": true,
+      "vevo": false
     },
     {
       "id": 3,
-      "nev": "Szállitó 3"
+      "nev": "Szállitó 3",
+      "adoszam": "12345678-2-08",
+      "cim": "9400, Sopron, Baross u. 4",
+      "szallito": true,
+      "vevo": false
     },
     {
       "id": 4,
-      "nev": "Szállitó 4"
-    }
-  ],
-  "vevok": [
-    {
-      "id": 1,
-      "nev": "Vevő 1"
+      "nev": "Szállitó 4",
+      "adoszam": "12345678-2-08",
+      "cim": "9400, Sopron, Baross u. 4",
+      "szallito": true,
+      "vevo": false
     },
     {
-      "id": 2,
-      "nev": "Vevő 2"
+      "id": 5,
+      "nev": "Vevő 1",
+      "adoszam": "12345678-2-08",
+      "cim": "9400, Sopron, Baross u. 4",
+      "szallito": false,
+      "vevo": true
     },
     {
-      "id": 3,
-      "nev": "Vevő 3"
+      "id": 6,
+      "nev": "Vevő 2",
+      "adoszam": "12345678-2-08",
+      "cim": "9400, Sopron, Baross u. 4",
+      "szallito": false,
+      "vevo": true
     },
     {
-      "id": 4,
-      "nev": "Vevő 4"
+      "id": 7,
+      "nev": "Vevő 3",
+      "adoszam": "12345678-2-08",
+      "cim": "9400, Sopron, Baross u. 4",
+      "szallito": false,
+      "vevo": true
+    },
+    {
+      "id": 8,
+      "nev": "Vevő 4",
+      "adoszam": "12345678-2-08",
+      "cim": "9400, Sopron, Baross u. 4",
+      "szallito": false,
+      "vevo": true
     }
   ],
   "szamlatukor": [

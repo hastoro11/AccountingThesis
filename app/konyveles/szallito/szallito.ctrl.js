@@ -130,7 +130,9 @@ angular.module('myApp.szallito')
 
         SzallitoSrvc.getPartnerek()
             .success(function (data) {
-                $scope.partnerek = data;
+                $scope.partnerek = _.filter(data, function (partner) {
+                    return partner.szallito === true;
+                })
             })
         SzallitoSrvc.getAfak()
             .success(function (data) {
