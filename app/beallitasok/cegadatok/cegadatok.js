@@ -7,7 +7,7 @@ angular.module('myApp.cegadatok', [])
         $stateProvider
             .state('cegadatok', {
                 url: '/cegadatok',
-                templateUrl: 'cegadatok/cegadatok.form.html',
+                templateUrl: 'beallitasok/cegadatok/cegadatok.form.html',
                 controller: 'CegadatokCtrl'
             })
     })

@@ -8,6 +8,8 @@ angular.module('myApp', [
     'myApp.home',
     'myApp.szallito',
     'myApp.vevo',
+    'myApp.kivonat',
+    'myApp.karton',
     'myApp.common',
     'myApp.cegadatok'
 ]).

@@ -43,8 +43,8 @@
                         Listák <span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a href="#"> Főkönyvi kivonat </a></li>
-                        <li><a href="#"> Főkönyvi kartonok </a></li>
+                        <li><a ui-sref="kivonat" href="#"> Főkönyvi kivonat </a></li>
+                        <li><a ui-sref="karton" href="#"> Főkönyvi kartonok </a></li>
                         <li class="divider"></li>
                         <li><a href="#"> Napló </a></li>
                         <li class="divider"></li>
@@ -101,16 +101,22 @@
 <script src="common/common.services.js"></script>
 <script src="home/home.js"></script>
 <!-- Szállító -->
-<script src="szallito/szallito.js"></script>
-<script src="szallito/szallito.ctrl.js"></script>
-<script src="szallito/szallito.srvc.js"></script>
+<script src="konyveles/szallito/szallito.js"></script>
+<script src="konyveles/szallito/szallito.ctrl.js"></script>
+<script src="konyveles/szallito/szallito.srvc.js"></script>
 <!-- Vevő -->
-<script src="vevo/vevo.js"></script>
-<script src="vevo/vevo.ctrl.js"></script>
-<script src="vevo/vevo.srvc.js"></script>
+<script src="konyveles/vevo/vevo.js"></script>
+<script src="konyveles/vevo/vevo.ctrl.js"></script>
+<script src="konyveles/vevo/vevo.srvc.js"></script>
+<!-- Kivonat -->
+<script src="listak/kivonat/kivonat.js"></script>
+<script src="listak/kivonat/kivonat.ctrl.js"></script>
+<!-- Karton -->
+<script src="listak/karton/karton.js"></script>
+<script src="listak/karton/karton.ctrl.js"></script>
 <!-- Cégadatok -->
-<script src="cegadatok/cegadatok.js"></script>
-<script src="cegadatok/cegadatok.ctrl.js"></script>
-<script src="cegadatok/cegadatok.srvc.js"></script>
+<script src="beallitasok/cegadatok/cegadatok.js"></script>
+<script src="beallitasok/cegadatok/cegadatok.ctrl.js"></script>
+<script src="beallitasok/cegadatok/cegadatok.srvc.js"></script>
 </body>
 </html>

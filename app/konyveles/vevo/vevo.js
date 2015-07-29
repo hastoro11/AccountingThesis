@@ -7,7 +7,7 @@ angular.module('myApp.vevo', [])
         $stateProvider
             .state('vevo', {
                 url: '/vevo',
-                templateUrl: 'vevo/vevo.html',
+                templateUrl: 'konyveles/vevo/vevo.html',
                 controller: 'VevoCtrl',
                 resolve: {
                     naplo: function ($http) {

@@ -4,7 +4,7 @@ angular.module('myApp.szallito', [])
         $stateProvider
             .state('szallito', {
                 url: '/szallito',
-                templateUrl: 'szallito/szallito.html',
+                templateUrl: 'konyveles/szallito/szallito.html',
                 controller: 'SzallitoCtrl',
                 resolve: {
                     naplo: function ($http) {
