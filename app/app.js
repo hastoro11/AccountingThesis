@@ -15,6 +15,7 @@ angular.module('myApp', [
     'myApp.common',
     'myApp.cegadatok',
     'myApp.partnerek',
+    'myApp.szamlatukor',
     'myApp.afakulcsok'
 ]).
     config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {
@@ -30,8 +31,16 @@ angular.module('myApp', [
                 url: '/dokumentacio',
                 templateUrl: 'dokumentacio/dokumentacio.html',
                 controller: function () {
-                    
+
                 }
             })
 
-    }]);
+    }])
+
+
+    .run(['$window', '$rootScope',
+        function ($window, $rootScope) {
+            $rootScope.goBack = function () {
+                $window.history.back();
+            }
+        }]);

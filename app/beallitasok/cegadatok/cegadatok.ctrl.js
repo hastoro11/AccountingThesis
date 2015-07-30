@@ -3,7 +3,7 @@
  */
 angular.module('myApp.cegadatok')
 
-    .controller('CegadatokCtrl', function ($scope, $window, CegadatokSrvc) {
+    .controller('CegadatokCtrl', function ($scope, $state, $window, CegadatokSrvc) {
         $scope.cegadatok = {};
         CegadatokSrvc.getCegadatok()
             .success(function (data) {
@@ -27,6 +27,6 @@ angular.module('myApp.cegadatok')
         }
 
         $scope.cancel = function () {
-            $window.history.back();
+            $state.go('home');
         }
     })
