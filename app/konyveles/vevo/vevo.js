@@ -11,7 +11,7 @@ angular.module('myApp.vevo', [])
                 controller: 'VevoCtrl',
                 resolve: {
                     naplo: function ($http) {
-                        return $http.get('http://localhost:3000/fizmodok');
+                        return $http.get('http://localhost:3000/naplo');
                     }
                 }
             })

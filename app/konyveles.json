@@ -6,7 +6,7 @@
       "cim": "9400 Sopron, Apor V. u. 8.",
       "adoszam": "12345678-2-08",
       "cegjegyzekszam": "08-09-01234",
-      "bankszamlaszam": "11111111-11111111-22222222",
+      "bankszamlaszam": "10103386-01001001-01001009",
       "kshszam": "12345678-6810-113-08"
     }
   ],
@@ -261,6 +261,12 @@
       "tipus": "F",
       "kulcs": 27,
       "fokszam": "4671"
+    },
+    {
+      "kulcs": 5,
+      "tipus": "F",
+      "fokszam": 4671,
+      "id": 7
     }
   ]
 }

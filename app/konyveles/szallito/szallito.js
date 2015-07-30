@@ -8,7 +8,7 @@ angular.module('myApp.szallito', [])
                 controller: 'SzallitoCtrl',
                 resolve: {
                     naplo: function ($http) {
-                        return $http.get('http://localhost:3000/fizmodok');
+                        return $http.get('http://localhost:3000/naplo');
                     }
                 }
             })
