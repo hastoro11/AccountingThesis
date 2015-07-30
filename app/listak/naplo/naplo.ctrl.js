@@ -11,7 +11,7 @@ angular.module('myApp.naplo')
                 controller: 'NaploModalCtrl',
                 resolve: {
                     naplok: function ($http) {
-                        return $http.get('http://localhost:3000/naplo');
+                        return $http.get('http://localhost:3000/fizmodok');
                     }
                 }
             });

@@ -10,23 +10,27 @@ angular.module('myApp.cegadatok')
                 $scope.cegadatok = data;
             })
 
+
+    })
+
+    .controller('CegadatokEditCtrl', function ($scope, $state, CegadatokSrvc) {
+
+        $scope.cegadatok = {};
+        CegadatokSrvc.getCegadatok()
+            .success(function (data) {
+                $scope.cegadatok = data;
+            })
+
         $scope.save = function () {
             CegadatokSrvc.setCegadatok($scope.cegadatok.id, $scope.cegadatok)
                 .success(function (data, header, config) {
-                    console.log(data);
-                    console.log(header);
-                    console.log(config);
-                    toastr.success('Mentés sikerült', '', {"timeOut": 1000});
+                    toastr.success('A mentés sikerült', '', {"timeOut": 1000});
+                    $state.go('cegadatok');
                 })
                 .error(function (data, header, config) {
-                    console.log(data);
-                    console.log(header);
-                    console.log(config);
                     toastr.error('A mentés nem sikerült', '', {"timeOut": 1000});
                 });
         }
 
-        $scope.cancel = function () {
-            $state.go('home');
-        }
+
     })

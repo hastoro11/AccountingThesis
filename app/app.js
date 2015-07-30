@@ -16,6 +16,7 @@ angular.module('myApp', [
     'myApp.cegadatok',
     'myApp.partnerek',
     'myApp.szamlatukor',
+    'myApp.fizmodok',
     'myApp.afakulcsok'
 ]).
     config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {

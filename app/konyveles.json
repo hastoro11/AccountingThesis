@@ -211,13 +211,18 @@
   "fizmodok": [
     {
       "id": 1,
-      "megnevezes": "átutalás",
+      "megnevezes": "átutalás - 8 nap",
       "fizhatarido": 8
     },
     {
       "id": 2,
       "megnevezes": "utánvét",
       "fizhatarido": 0
+    },
+    {
+      "megnevezes": "átutalás - 10 nap",
+      "fizhatarido": 12,
+      "id": 3
     }
   ],
   "afakulcsok": [
