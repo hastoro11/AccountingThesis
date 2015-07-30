@@ -14,7 +14,8 @@ angular.module('myApp', [
     'myApp.naplo',
     'myApp.common',
     'myApp.cegadatok',
-    'myApp.partnerek'
+    'myApp.partnerek',
+    'myApp.afakulcsok'
 ]).
     config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {
         $urlRouterProvider.otherwise('/');

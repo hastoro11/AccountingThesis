@@ -20,7 +20,7 @@ angular.module('myApp.naplo')
                 .then(function (data) {
                     $scope.naplo = data;
                 }, function () {
-                    $window.history.back();
+                    //$window.history.back();
                 })
         }
 

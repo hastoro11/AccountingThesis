@@ -11,7 +11,7 @@ angular.module('myApp.szallito')
         }
 
         factory.getAfak = function () {
-            return $http.get(url + 'lev-afa');
+            return $http.get(url + 'afakulcsok');
         }
 
         return factory;

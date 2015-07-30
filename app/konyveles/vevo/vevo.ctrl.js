@@ -112,7 +112,9 @@
 
             VevoSrvc.getAfak()
                 .success(function (data) {
-                    $scope.afak = data;
+                    $scope.afak = _.filter(data, function (afa) {
+                        return afa.fokszam.toString().indexOf('467') > -1;
+                    })
                 })
             CommonSrvc.getFizModok()
                 .success((function (data) {

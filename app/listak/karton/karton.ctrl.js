@@ -22,7 +22,7 @@ angular.module('myApp.karton')
                     $scope.karton = data;
                 },
                 function () {
-                    $state.go('home');
+                    //$state.go('home');
                 }
             )
         }

@@ -76,8 +76,15 @@ angular.module('myApp.partnerek')
         $scope.delete = function (partner) {
             var modalInstance = $modal.open({
                 animation: false,
-                templateUrl: 'beallitasok/partnerek/confirm.modal.html',
-                controller: 'PartnerModalCtrl'
+                templateUrl: 'common/confirm.modal.html',
+                controller: 'PartnerModalCtrl',
+                resolve: {
+                    data: function () {
+                        return {
+                            message: 'A partner törlésre kerül'
+                        }
+                    }
+                }
             })
 
             modalInstance.result
@@ -94,7 +101,8 @@ angular.module('myApp.partnerek')
 
     })
 
-    .controller('PartnerModalCtrl', function ($scope, $modalInstance) {
+    .controller('PartnerModalCtrl', function ($scope, $modalInstance, data) {
+        $scope.data = data;
         $scope.cancel = function () {
             $modalInstance.dismiss();
         }

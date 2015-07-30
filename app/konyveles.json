@@ -220,36 +220,40 @@
       "fizhatarido": 0
     }
   ],
-  "lev-afa": [
+  "afakulcsok": [
     {
       "id": 1,
+      "tipus": "L",
       "kulcs": 0,
-      "fokszam": "4661"
+      "fokszam": 4661
     },
     {
       "id": 2,
+      "tipus": "L",
       "kulcs": 18,
       "fokszam": "4661"
     },
     {
       "id": 3,
+      "tipus": "L",
       "kulcs": 27,
       "fokszam": "4661"
-    }
-  ],
-  "fiz-afa": [
-    {
-      "id": 1,
-      "kulcs": 0,
-      "fokszam": "4671"
     },
     {
-      "id": 2,
+      "id": 4,
+      "tipus": "F",
+      "kulcs": 0,
+      "fokszam": 4671
+    },
+    {
+      "id": 5,
+      "tipus": "F",
       "kulcs": 18,
       "fokszam": "4671"
     },
     {
-      "id": 3,
+      "id": 6,
+      "tipus": "F",
       "kulcs": 27,
       "fokszam": "4671"
     }

@@ -3,7 +3,7 @@
  */
 angular.module('myApp.cegadatok')
 
-    .controller('CegadatokCtrl', function ($scope, CegadatokSrvc) {
+    .controller('CegadatokCtrl', function ($scope, $window, CegadatokSrvc) {
         $scope.cegadatok = {};
         CegadatokSrvc.getCegadatok()
             .success(function (data) {
@@ -24,7 +24,9 @@ angular.module('myApp.cegadatok')
                     console.log(config);
                     toastr.error('A mentés nem sikerült', '', {"timeOut": 1000});
                 });
+        }
 
-
+        $scope.cancel = function () {
+            $window.history.back();
         }
     })

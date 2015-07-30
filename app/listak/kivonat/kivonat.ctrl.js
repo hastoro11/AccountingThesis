@@ -20,7 +20,7 @@ angular.module('myApp.kivonat')
                 .then(function (data) {
                     $scope.data = data;
                 }, function () {
-                    $state.go('home');
+                    //$state.go('home');
                 });
         }
 

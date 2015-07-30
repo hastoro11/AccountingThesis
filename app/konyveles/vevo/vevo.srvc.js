@@ -11,7 +11,7 @@ angular.module('myApp')
         }
 
         factory.getAfak = function () {
-            return $http.get(url + 'fiz-afa');
+            return $http.get(url + 'afakulcsok');
         }
 
         return factory;
