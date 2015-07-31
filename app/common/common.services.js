@@ -16,6 +16,19 @@ angular.module('myApp.common', [])
             return $http.get(url + 'szamlatukor');
         }
 
+        factory.getNaplok = function () {
+            return $http.get(url + naplo);
+        }
+
+        factory.getPartnerek = function () {
+            return $http.get(url + 'partnerek');
+        }
+
+
+        factory.getAfak = function () {
+            return $http.get(url + 'afakulcsok');
+        }
+
         //---------------
         return factory;
     })

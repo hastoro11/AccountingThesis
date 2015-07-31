@@ -9,6 +9,7 @@ angular.module('myApp', [
     'myApp.home',
     'myApp.szallito',
     'myApp.vevo',
+    'myApp.penztar',
     'myApp.kivonat',
     'myApp.karton',
     'myApp.naplo',
@@ -38,10 +39,3 @@ angular.module('myApp', [
 
     }])
 
-
-    .run(['$window', '$rootScope',
-        function ($window, $rootScope) {
-            $rootScope.goBack = function () {
-                $window.history.back();
-            }
-        }]);

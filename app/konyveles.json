@@ -108,6 +108,21 @@
       "osszesito": "N"
     },
     {
+      "fokszam": 381,
+      "megnevezes": "Pénztárak",
+      "osszesito": "I"
+    },
+    {
+      "fokszam": 3811,
+      "megnevezes": "Pénztár",
+      "osszesito": "N"
+    },
+    {
+      "fokszam": 3812,
+      "megnevezes": "Egyéb készpénz fizetési eszköz",
+      "osszesito": "N"
+    },
+    {
       "fokszam": 4,
       "megnevezes": "Kötelezettségek",
       "osszesito": "I"
@@ -223,6 +238,11 @@
       "megnevezes": "átutalás - 10 nap",
       "fizhatarido": 12,
       "id": 3
+    },
+    {
+      "megnevezes": "készpénz",
+      "fizhatarido": 0,
+      "id": 4
     }
   ],
   "afakulcsok": [
