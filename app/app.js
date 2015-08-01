@@ -9,6 +9,7 @@ angular.module('myApp', [
     'myApp.home',
     'myApp.szallito',
     'myApp.vevo',
+    'myApp.bank',
     'myApp.penztar',
     'myApp.kivonat',
     'myApp.karton',

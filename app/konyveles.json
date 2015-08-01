@@ -123,6 +123,21 @@
       "osszesito": "N"
     },
     {
+      "fokszam": 384,
+      "megnevezes": "Elszámolási számlák",
+      "osszesito": "I"
+    },
+    {
+      "fokszam": 3841,
+      "megnevezes": "Elszámolási számla",
+      "osszesito": "N"
+    },
+    {
+      "fokszam": 3842,
+      "megnevezes": "Elszámolási számla",
+      "osszesito": "N"
+    },
+    {
       "fokszam": 4,
       "megnevezes": "Kötelezettségek",
       "osszesito": "I"
@@ -221,6 +236,12 @@
       "megnevezes": "Pénztár",
       "jel": "P",
       "fokszam": "381"
+    },
+    {
+      "id": 4,
+      "megnevezes": "Bank",
+      "jel": "B",
+      "fokszam": "384"
     }
   ],
   "fizmodok": [
