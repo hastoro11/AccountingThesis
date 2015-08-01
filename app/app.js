@@ -11,6 +11,7 @@ angular.module('myApp', [
     'myApp.vevo',
     'myApp.bank',
     'myApp.penztar',
+    'myApp.vegyes',
     'myApp.kivonat',
     'myApp.karton',
     'myApp.naplo',

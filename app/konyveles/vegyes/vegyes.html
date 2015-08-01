@@ -10,19 +10,19 @@
 
             <!-- Panel body -->
             <div class="panel-body">
-                <form name="penztarForm" novalidate>
+                <form name="vegyesForm" novalidate>
                     <!-- Első sor -->
                     <div class="row">
                         <!-- Főkönyvi szám -->
                         <div class="col-sm-2">
                             <div class="form-group form-group-sm"
-                                 ng-class="{'has-error':penztarForm.fokszam.$invalid && penztarForm.fokszam.$touched}">
+                                 ng-class="{'has-error':vegyesForm.fokszam.$invalid && vegyesForm.fokszam.$touched}">
                                 <label class="control-label">Főkönyvi szám</label>
                                 <select class="form-control"
                                         name="fokszam"
                                         ng-required="true"
                                         ng-model="tetel.fokszam"
-                                        ng-options="fokszam.fokszam as fokszam.fokszam + ' - '+ fokszam.megnevezes for fokszam in penztarak">
+                                        ng-options="fokszam.fokszam as fokszam.fokszam + ' - '+ fokszam.megnevezes for fokszam in szamlatukor">
                                     <option value=""> -- Főkönyvi szám --</option>
                                 </select>
                             </div>
@@ -30,12 +30,11 @@
 
                         <!-- Partnerek -->
                         <div class="col-sm-2">
-                            <div class="form-group form-group-sm"
-                                 ng-class="{'has-error':penztarForm.partner.$invalid && penztarForm.partner.$touched}">
+                            <div class="form-group form-group-sm">
                                 <label class="control-label">Partner</label>
                                 <select class="form-control"
                                         name="partner"
-                                        ng-required="true"
+                                        ng-disabled="true"
                                         ng-model="tetel.partner"
                                         ng-options="partner.id as partner.nev for partner in partnerek">
                                     <option value=""> -- Partnerek --</option>
@@ -58,7 +57,7 @@
                         <!-- Bizonylatszám -->
                         <div class="col-sm-2">
                             <div class="form-group form-group-sm"
-                                 ng-class="{'has-error':penztarForm.bizszam.$invalid && penztarForm.bizszam.$touched}">
+                                 ng-class="{'has-error':vegyesForm.bizszam.$invalid && vegyesForm.bizszam.$touched}">
                                 <label class="control-label">Bizonylatszám</label>
                                 <input type="text" class="form-control"
                                        name="bizszam"
@@ -69,17 +68,17 @@
 
                         <!-- Hibaüzenetek -->
                         <div class="col-sm-4">
-                            <div ng-if="penztarForm.fokszam.$error.required && penztarForm.fokszam.$touched
-                            || penztarForm.partner.$error.required && penztarForm.partner.$touched
-                            || penztarForm.fizmod.$error.required && penztarForm.fizmod.$touched
-                            || penztarForm.bizszam.$error.required && penztarForm.bizszam.$touched
-                            || penztarForm.teljdatum.$error.required && penztarForm.teljdatum.$touched
-                            || penztarForm.kialldatum.$error.required && penztarForm.kialldatum.$touched
-                            || penztarForm.eseddatum.$error.required && penztarForm.eseddatum.$touched
-                            || penztarForm.megnevezes.$error.required && penztarForm.megnevezes.$touched
-                            || penztarForm.osszeg.$invalid && penztarForm.osszeg.$touched
-                            || penztarForm.sorfokszam.$invalid && penztarForm.sorfokszam.$touched
-                            || penztarForm.sormegnevezes.$invalid && penztarForm.sormegnevezes.$touched
+                            <div ng-if="vegyesForm.fokszam.$error.required && vegyesForm.fokszam.$touched
+                            || vegyesForm.partner.$error.required && vegyesForm.partner.$touched
+                            || vegyesForm.fizmod.$error.required && vegyesForm.fizmod.$touched
+                            || vegyesForm.bizszam.$error.required && vegyesForm.bizszam.$touched
+                            || vegyesForm.teljdatum.$error.required && vegyesForm.teljdatum.$touched
+                            || vegyesForm.kialldatum.$error.required && vegyesForm.kialldatum.$touched
+                            || vegyesForm.eseddatum.$error.required && vegyesForm.eseddatum.$touched
+                            || vegyesForm.megnevezes.$error.required && vegyesForm.megnevezes.$touched
+                            || vegyesForm.osszeg.$invalid && vegyesForm.osszeg.$touched
+                            || vegyesForm.sorfokszam.$invalid && vegyesForm.sorfokszam.$touched
+                            || vegyesForm.sormegnevezes.$invalid && vegyesForm.sormegnevezes.$touched
                             ">
                                 <div class="text-danger"><strong>Hiba</strong></div>
                                 <div class="help-block"><span
@@ -99,7 +98,7 @@
                         <!-- Teljesítés ideje -->
                         <div class="col-sm-2">
                             <div class="form-group form-group-sm"
-                                 ng-class="{'has-error':penztarForm.teljdatum.$invalid && penztarForm.teljdatum.$touched}">
+                                 ng-class="{'has-error':vegyesForm.teljdatum.$invalid && vegyesForm.teljdatum.$touched}">
                                 <label class="control-label">Teljesítés</label>
 
                                 <div class="input-group input-group-sm">
@@ -123,7 +122,7 @@
                         <!-- Megnevezés -->
                         <div class="col-sm-3">
                             <div class="form-group form-group-sm"
-                                 ng-class="{'has-error':penztarForm.megnevezes.$invalid && penztarForm.megnevezes.$touched}">
+                                 ng-class="{'has-error':vegyesForm.megnevezes.$invalid && vegyesForm.megnevezes.$touched}">
                                 <label class="control-label">Megnevezés</label>
                                 <input type="text" class="form-control"
                                        name="megnevezes"
@@ -135,7 +134,7 @@
                         <!-- Összeg -->
                         <div class="col-sm-2">
                             <div class="form-group form-group-sm"
-                                 ng-class="{'has-error':penztarForm.osszeg.$invalid && penztarForm.osszeg.$touched}">
+                                 ng-class="{'has-error':vegyesForm.osszeg.$invalid && vegyesForm.osszeg.$touched}">
                                 <label class="control-label">Összeg</label>
                                 <input type="number" class="form-control"
                                        name="osszeg"
@@ -182,36 +181,22 @@
                         <!-- Főkönyvi szám -->
                         <div class="col-sm-2">
                             <div class="form-group form-group-sm"
-                                 ng-class="{'has-error':penztarForm.sorfokszam.$invalid && penztarForm.sorfokszam.$touched}">
+                                 ng-class="{'has-error':vegyesForm.sorfokszam.$invalid && vegyesForm.sorfokszam.$touched}">
                                 <label class="control-label">Főkönyvi szám</label>
                                 <select class="form-control"
                                         name="sorfokszam"
                                         ng-required="true"
                                         ng-model="sor.fokszam"
-                                        ng-options="fokszam.fokszam as fokszam.fokszam + ' - ' + fokszam.megnevezes for fokszam in szamlatukor"
-                                        ng-change="kiegyenlit()">
+                                        ng-options="fokszam.fokszam as fokszam.fokszam + ' - ' + fokszam.megnevezes for fokszam in szamlatukor">
                                     <option value=""> -- Főkönyvi szám --</option>
                                 </select>
                             </div>
                         </div>
 
-                        <!-- Ellenbizszam -->
-                        <div class="col-sm-2"
-                             ng-if="kiegyenlites"
-                             ng-class="{'has-error':penztarForm.ellenbizszam.$invalid && penztarForm.ellenbizszam.$touched}">
-                            <div class="form-group form-group-sm">
-                                <label class="control-label">Bizonylatszám</label>
-                                <input type="text" class="form-control"
-                                       name="ellenbizszam"
-                                       ng-required="true"
-                                       ng-model="sor.ellenbizszam">
-                            </div>
-                        </div>
-
                         <!-- Megnevezés -->
-                        <div ng-class="{'col-sm-3':!kiegyenlites,'col-sm-2':kiegyenlites}">
+                        <div class="col-sm-3">
                             <div class="form-group form-group-sm"
-                                 ng-class="{'has-error':penztarForm.sormegnevezes.$invalid && penztarForm.sormegnevezes.$touched}">
+                                 ng-class="{'has-error':vegyesForm.sormegnevezes.$invalid && vegyesForm.sormegnevezes.$touched}">
                                 <label class="control-label">Megnevezés</label>
                                 <input type="text" class="form-control"
                                        name="sormegnevezes"
@@ -255,12 +240,12 @@
                         </div>
 
                         <!-- ÁFA -->
-                        <div ng-class="{'col-sm-2':!kiegyenlites,'col-sm-1':kiegyenlites}">
+                        <div class="col-sm-2">
                             <div class="form-group form-group-sm">
                                 <label class="control-label">ÁFA</label>
                                 <select class="form-control"
                                         ng-model="sor.afa"
-                                        ng-disabled="kiegyenlites"
+                                        ng-disabled="true"
                                         ng-options="afa.fokszam + ' - ' + afa.kulcs + '%-os ÁFA' for afa in afak">
                                     <option value=""> -- ÁFA --</option>
                                 </select>

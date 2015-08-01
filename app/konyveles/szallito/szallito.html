@@ -85,6 +85,8 @@
                             || szallitoForm.eseddatum.$error.required && szallitoForm.eseddatum.$touched
                             || szallitoForm.megnevezes.$error.required && szallitoForm.megnevezes.$touched
                             || szallitoForm.osszeg.$invalid && szallitoForm.osszeg.$touched
+                            || szallitoForm.sorfokszam.$invalid && szallitoForm.sorfokszam.$touched
+                            || szallitoForm.sormegnevezes.$invalid && szallitoForm.sormegnevezes.$touched
                             ">
                                 <div class="text-danger"><strong>Hiba</strong></div>
                                 <div class="help-block"><span
@@ -239,10 +241,13 @@
 
                         <!-- Főkönyvi szám -->
                         <div class="col-sm-2">
-                            <div class="form-group form-group-sm">
+                            <div class="form-group form-group-sm"
+                                 ng-class="{'has-error':szallitoForm.sorfokszam.$invalid && szallitoForm.sorfokszam.$touched}">
                                 <label class="control-label">Főkönyvi szám</label>
 
-                                <select class="form-control" name="ellenfokszam" autofocus
+                                <select class="form-control" autofocus
+                                        name="sorfokszam"
+                                        ng-required="true"
                                         ng-model="sor.fokszam"
                                         ng-options="fok.fokszam as fok.fokszam + ' - ' + fok.megnevezes for fok in szamlatukor">
                                     <option value=""> -- Főkönyvi szám --</option>
@@ -252,10 +257,14 @@
 
                         <!-- Megnevezés -->
                         <div class="col-sm-3">
-                            <div class="form-group form-group-sm">
+                            <div class="form-group form-group-sm"
+                                 ng-class="{'has-error':szallitoForm.sormegnevezes.$invalid && szallitoForm.sormegnevezes.$touched}">
                                 <label class="control-label">Megnevezés</label>
 
-                                <input type="text" class="form-control" ng-model="sor.megnevezes">
+                                <input type="text" class="form-control"
+                                       name="sormegnevezes"
+                                       ng-required="true"
+                                       ng-model="sor.megnevezes">
                             </div>
                         </div>
 
@@ -296,7 +305,7 @@
                                 <select class="form-control"
                                         ng-model="sor.afa"
                                         ng-options="afa.fokszam + ' - ' + afa.kulcs + '%-os ÁFA' for afa in afak">
-                                    <option value=""> -- ÁFA -- </option>
+                                    <option value=""> -- ÁFA --</option>
                                 </select>
                             </div>
                         </div>

@@ -242,6 +242,12 @@
       "megnevezes": "Bank",
       "jel": "B",
       "fokszam": "384"
+    },
+    {
+      "id": 5,
+      "megnevezes": "Vegyes",
+      "jel": "E",
+      "fokszam": ""
     }
   ],
   "fizmodok": [

@@ -67,6 +67,29 @@
                             </div>
                         </div>
 
+                        <!-- Hibaüzenetek -->
+                        <div class="col-sm-4">
+                            <div ng-if="bankForm.fokszam.$error.required && bankForm.fokszam.$touched
+                            || bankForm.partner.$error.required && bankForm.partner.$touched
+                            || bankForm.fizmod.$error.required && bankForm.fizmod.$touched
+                            || bankForm.bizszam.$error.required && bankForm.bizszam.$touched
+                            || bankForm.teljdatum.$error.required && bankForm.teljdatum.$touched
+                            || bankForm.kialldatum.$error.required && bankForm.kialldatum.$touched
+                            || bankForm.eseddatum.$error.required && bankForm.eseddatum.$touched
+                            || bankForm.megnevezes.$error.required && bankForm.megnevezes.$touched
+                            || bankForm.osszeg.$invalid && bankForm.osszeg.$touched
+                            || bankForm.sorfokszam.$invalid && bankForm.sorfokszam.$touched
+                            || bankForm.sormegnevezes.$invalid && bankForm.sormegnevezes.$touched
+                            ">
+                                <div class="text-danger"><strong>Hiba</strong></div>
+                                <div class="help-block"><span
+                                        class="text-danger">Kérem, ellenőrizze a megjelölt mezőket</span>
+                                </div>
+                            </div>
+
+
+                        </div>
+
                     </div>
                     <!-- Első sor vége -->
 
@@ -158,9 +181,12 @@
 
                         <!-- Főkönyvi szám -->
                         <div class="col-sm-2">
-                            <div class="form-group form-group-sm">
+                            <div class="form-group form-group-sm"
+                                 ng-class="{'has-error':bankForm.sorfokszam.$invalid && bankForm.sorfokszam.$touched}">
                                 <label class="control-label">Főkönyvi szám</label>
                                 <select class="form-control"
+                                        name="sorfokszam"
+                                        ng-required="true"
                                         ng-model="sor.fokszam"
                                         ng-options="fokszam.fokszam as fokszam.fokszam + ' - ' + fokszam.megnevezes for fokszam in szamlatukor"
                                         ng-change="kiegyenlit()">
@@ -184,9 +210,12 @@
 
                         <!-- Megnevezés -->
                         <div ng-class="{'col-sm-3':!kiegyenlites,'col-sm-2':kiegyenlites}">
-                            <div class="form-group form-group-sm">
+                            <div class="form-group form-group-sm"
+                                 ng-class="{'has-error':bankForm.sormegnevezes.$invalid && bankForm.sormegnevezes.$touched}">
                                 <label class="control-label">Megnevezés</label>
                                 <input type="text" class="form-control"
+                                       name="sormegnevezes"
+                                       ng-required="true"
                                        ng-model="sor.megnevezes">
                             </div>
                         </div>

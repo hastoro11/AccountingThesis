@@ -71,6 +71,29 @@
                             </div>
                         </div>
 
+                        <!-- Hibaüzenetek -->
+                        <div class="col-sm-4">
+                            <div ng-if="vevoForm.fokszam.$error.required && vevoForm.fokszam.$touched
+                            || vevoForm.partner.$error.required && vevoForm.partner.$touched
+                            || vevoForm.fizmod.$error.required && vevoForm.fizmod.$touched
+                            || vevoForm.bizszam.$error.required && vevoForm.bizszam.$touched
+                            || vevoForm.teljdatum.$error.required && vevoForm.teljdatum.$touched
+                            || vevoForm.kialldatum.$error.required && vevoForm.kialldatum.$touched
+                            || vevoForm.eseddatum.$error.required && vevoForm.eseddatum.$touched
+                            || vevoForm.megnevezes.$error.required && vevoForm.megnevezes.$touched
+                            || vevoForm.osszeg.$invalid && vevoForm.osszeg.$touched
+                            || vevoForm.sorfokszam.$invalid && vevoForm.sorfokszam.$touched
+                            || vevoForm.sormegnevezes.$invalid && vevoForm.sormegnevezes.$touched
+                            ">
+                                <div class="text-danger"><strong>Hiba</strong></div>
+                                <div class="help-block"><span
+                                        class="text-danger">Kérem, ellenőrizze a megjelölt mezőket</span>
+                                </div>
+                            </div>
+
+
+                        </div>
+
                     </div>
                     <!-- Első sor vége -->
 
@@ -212,9 +235,12 @@
 
                         <!-- Főkönyvi szám -->
                         <div class="col-sm-2">
-                            <div class="form-group form-group-sm">
+                            <div class="form-group form-group-sm"
+                                 ng-class="{'has-error':vevoForm.sorfokszam.$invalid && vevoForm.sorfokszam.$touched}">
                                 <label class="control-label">Főkönyvi szám</label>
                                 <select class="form-control"
+                                        name="sorfokszam"
+                                        ng-required="true"
                                         ng-model="sor.fokszam"
                                         ng-options="fokszam.fokszam as fokszam.fokszam + ' - ' + fokszam.megnevezes for fokszam in szamlatukor">
                                     <option value=""> -- Főkönyvi szám --</option>
@@ -224,9 +250,12 @@
 
                         <!-- Megnevezés -->
                         <div class="col-sm-3">
-                            <div class="form-group form-group-sm">
+                            <div class="form-group form-group-sm"
+                                 ng-class="{'has-error':vevoForm.sormegnevezes.$invalid && vevoForm.sormegnevezes.$touched}">
                                 <label class="control-label">Megnevezés</label>
                                 <input type="text" class="form-control"
+                                       name="sormegnevezes"
+                                       ng-required="true"
                                        ng-model="sor.megnevezes">
                             </div>
                         </div>
