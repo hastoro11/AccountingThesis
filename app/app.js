@@ -41,3 +41,7 @@ angular.module('myApp', [
 
     }])
 
+    .constant('appConfig', {
+        baseUrl: 'http://localhost:8080/rest/'
+    })
+

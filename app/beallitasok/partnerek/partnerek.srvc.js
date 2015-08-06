@@ -3,11 +3,12 @@
  */
 angular.module('myApp.partnerek')
 
-    .factory('PartnerekSrvc', function ($http) {
+    .factory('PartnerekSrvc', function ($http, appConfig) {
         var factory = {};
-        var url = 'http://localhost:3000/partnerek';
+        var url = appConfig.baseUrl + 'partnerek';
 
         factory.getPartnerek = function () {
+            console.log(appConfig.baseUrl);
             return $http.get(url);
         }
 
