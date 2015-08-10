@@ -3,16 +3,16 @@
  */
 angular.module('myApp.cegadatok')
 
-    .factory('CegadatokSrvc', function ($http) {
+    .factory('CegadatokSrvc', function ($http, appConfig) {
         var factory = {};
-        var url = "http://localhost:3000/cegadatok/";
+        var url = appConfig.baseUrl + 'cegadatok';
 
         factory.getCegadatok = function () {
-            return $http.get(url+1);
+            return $http.get(url);
         }
 
         factory.setCegadatok = function (id, data) {
-            return $http.put(url + id, data);
+            return $http.put(url, data);
         }
 
         return factory;
