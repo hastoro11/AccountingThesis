@@ -147,7 +147,7 @@ angular.module('myApp.szallito')
         CommonSrvc.getSzamlatukor()
             .success(function (data) {
                 $scope.szamlatukor = _.filter(data, function (szamla) {
-                    return szamla.osszesito === 'N'
+                    return szamla.osszesito === false
                         && szamla.fokszam.toString().indexOf('454') === -1
                         && szamla.fokszam.toString().indexOf('466') === -1
                         && szamla.fokszam.toString().indexOf('467') === -1;
@@ -155,7 +155,7 @@ angular.module('myApp.szallito')
 
                 $scope.szallitok = _.filter(data, function (item) {
                     return item.fokszam.toString().indexOf('454') > -1 &&
-                        item.osszesito === 'N';
+                        item.osszesito === false;
                 })
             });
 

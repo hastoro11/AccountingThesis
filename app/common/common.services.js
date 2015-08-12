@@ -3,7 +3,7 @@
  */
 angular.module('myApp.common', [])
 
-    .factory('CommonSrvc', function ($http) {
+    .factory('CommonSrvc', function ($http, appConfig) {
         var factory = {};
         var url = 'http://localhost:3000/';
         //---------------
@@ -13,15 +13,15 @@ angular.module('myApp.common', [])
         }
 
         factory.getSzamlatukor = function () {
-            return $http.get(url + 'szamlatukor');
+            return $http.get(appConfig.baseUrl + 'szamlatukor');
         }
 
         factory.getNaplok = function () {
-            return $http.get(url + naplo);
+            return $http.get(appConfig.baseUrl + naplok);
         }
 
         factory.getPartnerek = function () {
-            return $http.get(url + 'partnerek');
+            return $http.get(appConfig.baseUrl + 'partnerek');
         }
 
 

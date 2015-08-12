@@ -3,11 +3,11 @@
  */
 angular.module('myApp.szallito')
 
-    .factory('SzallitoSrvc', function ($http) {
+    .factory('SzallitoSrvc', function ($http, appConfig) {
         var factory = {};
         var url = "http://localhost:3000/";
         factory.getPartnerek = function () {
-            return $http.get(url + 'partnerek');
+            return $http.get(appConfig.baseUrl + 'partnerek');
         }
 
         factory.getAfak = function () {
