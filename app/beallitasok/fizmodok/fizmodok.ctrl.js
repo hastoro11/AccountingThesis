@@ -31,6 +31,7 @@ angular.module('myApp.fizmodok')
                         $state.go('fizmodok');
                     })
             } else {
+                $scope.fizmod.torolheto = true;
                 FizmodokSrvc.createFizomd($scope.fizmod)
                     .success(function () {
                         toastr.success('A mentés sikerült', '', {timeOut: 1000});
@@ -39,7 +40,7 @@ angular.module('myApp.fizmodok')
             }
         }
 
-        $scope.delete = function () {
+        $scope.delete = function (fizmod) {
             var modalInstance = $modal.open({
                 animation: false,
                 templateUrl: 'common/confirm.modal.html',
@@ -55,8 +56,12 @@ angular.module('myApp.fizmodok')
 
             modalInstance.result.then(
                 function () {
-                    toastr.success('A törlés sikerült', '', {timeOut: 1000});
-                    $state.go('fizmodok');
+                    FizmodokSrvc.deleteFizmod(fizmod.id)
+                        .success(function () {
+                            toastr.success('A törlés sikerült', '', {timeOut: 1000});
+                            $state.go('fizmodok');
+                        })
+
                 }, function () {
                     toastr.warning('A törlés megszakítva', '', {timeOut: 1000});
                     $state.go('fizmodok');

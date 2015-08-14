@@ -3,9 +3,9 @@
  */
 angular.module('myApp.fizmodok')
 
-    .factory('FizmodokSrvc', function ($http) {
+    .factory('FizmodokSrvc', function ($http, appConfig) {
         var factory = {};
-        var url = 'http://localhost:3000/fizmodok';
+        var url = appConfig.baseUrl + 'fizmodok';
 
         factory.getFizmodok = function () {
             return $http.get(url);

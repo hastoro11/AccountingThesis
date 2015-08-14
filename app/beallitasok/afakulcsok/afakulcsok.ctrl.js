@@ -25,8 +25,6 @@ angular.module('myApp.afakulcsok')
             AfakulcsokSrvc.getAfaById($stateParams.id)
                 .success(function (data) {
                     $scope.afakulcs = data;
-                    $scope.afakulcs.fokszam = parseInt($scope.afakulcs.fokszam);
-
                 })
         }
 
@@ -83,10 +81,10 @@ angular.module('myApp.afakulcsok')
         CommonSrvc.getSzamlatukor()
             .success(function (data) {
                 $scope.fizafak = _.filter(data, function (fokszam) {
-                    return fokszam.fokszam.toString().indexOf('467') > -1 && fokszam.osszesito === 'N';
+                    return fokszam.fokszam.toString().indexOf('467') > -1 && fokszam.osszesito === false;
                 });
                 $scope.levafak = _.filter(data, function (fokszam) {
-                    return fokszam.fokszam.toString().indexOf('466') > -1 && fokszam.osszesito === 'N';
+                    return fokszam.fokszam.toString().indexOf('466') > -1 && fokszam.osszesito === false;
                 });
             })
 

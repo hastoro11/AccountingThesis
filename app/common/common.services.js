@@ -5,11 +5,10 @@ angular.module('myApp.common', [])
 
     .factory('CommonSrvc', function ($http, appConfig) {
         var factory = {};
-        var url = 'http://localhost:3000/';
         //---------------
 
         factory.getFizModok = function () {
-            return $http.get(url + 'fizmodok');
+            return $http.get(appConfig.baseUrl + 'fizmodok');
         }
 
         factory.getSzamlatukor = function () {
@@ -26,7 +25,7 @@ angular.module('myApp.common', [])
 
 
         factory.getAfak = function () {
-            return $http.get(url + 'afakulcsok');
+            return $http.get(appConfig.baseUrl + 'afakulcsok');
         }
 
         //---------------

@@ -3,9 +3,9 @@
  */
 angular.module('myApp.afakulcsok')
 
-    .factory('AfakulcsokSrvc', function ($http) {
+    .factory('AfakulcsokSrvc', function ($http, appConfig) {
         var factory = {};
-        var url = 'http://localhost:3000/afakulcsok';
+        var url = appConfig.baseUrl + 'afakulcsok';
         factory.getAfak = function () {
             return $http.get(url);
         }

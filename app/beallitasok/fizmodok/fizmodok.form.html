@@ -14,7 +14,7 @@
                                 <label class="col-sm-3 control-label">Megnevezés</label>
 
                                 <div class="col-sm-6">
-                                    <input type="text" class="form-control"
+                                    <input type="text" class="form-control" placeholder="Megnevezés"
                                            name="megnevezes"
                                            ng-model="fizmod.megnevezes"
                                            ng-required="true">
@@ -25,7 +25,7 @@
                                 <label class="col-sm-3 control-label">Határidő </label>
 
                                 <div class="col-sm-3">
-                                    <input type="number" class="form-control"
+                                    <input type="number" class="form-control" placeholder="Határidő"
                                            name="fizhatarido"
                                            ng-model="fizmod.fizhatarido"
                                            ng-required="true"
@@ -43,7 +43,7 @@
                         <span class="pull-right">
                             <button type="button" class="btn btn-warning" ng-click="cancel()">Mégsem</button>
                             <button type="button" class="btn btn-danger"
-                                    ng-click="delete()"
+                                    ng-click="delete(fizmod)"
                                     ng-if="edit"
                                     >Töröl</button>
                             <button type="button" class="btn btn-success"

@@ -15,11 +15,13 @@
                     <div class="col-sm-12">
                         <table class="table table-striped">
                             <tr>
+                                <th>Megnevezés</th>
                                 <th>Kulcs (%)</th>
                                 <th>Főkönyvi szám</th>
                                 <th></th>
                             </tr>
                             <tr ng-repeat="afa in fizafak">
+                                <td>{{afa.megnevezes}}</td>
                                 <td>{{afa.kulcs}}</td>
                                 <td>{{afa.fokszam}}</td>
                                 <td>
@@ -44,11 +46,13 @@
                     <div class="col-sm-12">
                         <table class="table table-striped">
                             <tr>
+                                <th>Megnevezés</th>
                                 <th>Kulcs (%)</th>
                                 <th>Főkönyvi szám</th>
                                 <th></th>
                             </tr>
                             <tr ng-repeat="afa in levafak">
+                                <td>{{afa.megnevezes}}</td>
                                 <td>{{afa.kulcs}}</td>
                                 <td>{{afa.fokszam}}</td>
                                 <td>

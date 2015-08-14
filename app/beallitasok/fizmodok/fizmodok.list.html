@@ -12,7 +12,9 @@
             <tr ng-repeat="fizmod in fizmodok">
                 <td><h6>{{fizmod.megnevezes}}</h6></td>
                 <td><h6>{{fizmod.fizhatarido}}</h6></td>
-                <td><button type="button" class="btn btn-danger pull-right" ui-sref="fizmodokEdit({id:fizmod.id})">Módosít</button> </td>
+                <td><button type="button" class="btn btn-danger pull-right"
+                            ng-if="fizmod.torolheto"
+                            ui-sref="fizmodokEdit({id:fizmod.id})">Módosít</button> </td>
             </tr>
         </table>
     </div>
